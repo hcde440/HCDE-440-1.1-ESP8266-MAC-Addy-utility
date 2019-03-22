@@ -7,9 +7,12 @@ String s;
 void setup() {
   pinMode(0, OUTPUT);
   Serial.begin(115200);
+  Serial.print("This board is running: ");
+  Serial.println(F(__FILE__));
+  Serial.print("Compiled: ");
+  Serial.println(F(__DATE__ " " __TIME__));
 
-
-  // Set WiFi to station mode and disconnect from an AP if it was previously connected
+  // Set WiFi to station mode and disconnect from an Access Point if it was previously connected
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
   delay(100);
